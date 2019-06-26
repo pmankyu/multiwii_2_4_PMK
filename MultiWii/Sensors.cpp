@@ -10,7 +10,6 @@
 #include "Sensors.h"
 
 static void Device_Mag_getADC();
-static void Baro_init();
 static void Mag_init();
 static void ACC_init();
 
@@ -444,7 +443,6 @@ void ACC_getADC () {
 void initS() {
   i2c_init();
   if (GYRO)  Gyro_init();
-  if (BARO)  Baro_init();
   if (MAG)   Mag_init();
   if (ACC)   ACC_init();
 }
