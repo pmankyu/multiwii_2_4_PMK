@@ -27,7 +27,6 @@ static void ACC_init();
   #define MAG_ORIENTATION(X, Y, Z)  {imu.magADC[ROLL]  = X; imu.magADC[PITCH]  = Y; imu.magADC[YAW]  = Z;}
 #endif
 
-
 //ITG3200 / ITG3205 / ITG3050 / MPU6050 / MPU3050 Gyro LPF setting
 #if defined(GYRO_LPF_256HZ) || defined(GYRO_LPF_188HZ) || defined(GYRO_LPF_98HZ) || defined(GYRO_LPF_42HZ) || defined(GYRO_LPF_20HZ) || defined(GYRO_LPF_10HZ) || defined(GYRO_LPF_5HZ)
   #if defined(GYRO_LPF_256HZ)
@@ -209,7 +208,7 @@ void GYRO_Common() {
     imu.gyroADC[axis]  -= gyroZero[axis];
     //anti gyro glitch, limit the variation between two consecutive readings
     imu.gyroADC[axis] = constrain(imu.gyroADC[axis],previousGyroADC[axis]-800,previousGyroADC[axis]+800);
-  #endif    
+  #endif
     previousGyroADC[axis] = imu.gyroADC[axis];
   }
 

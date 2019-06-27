@@ -1,5 +1,6 @@
 {
     "board": "arduino:avr:nano",
     "configuration": "cpu=atmega328old",
-    "sketch": "MultiWii\\MultiWii.ino"
+    "sketch": "MultiWii\\MultiWii.ino",
+    "port": "COM4"
 }
